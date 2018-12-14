@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-admin',
@@ -12,4 +13,16 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
+  log(x) { 
+    console.log('log called')
+    console.log(x) 
+   }
+
+   onSubmit(f: NgForm) {
+   
+    console.log('onSubmit called...')
+    console.log(`firstName: ${f.value.first}`);
+    console.log(f.valid);
+    console.log(f);
+   }
 }
